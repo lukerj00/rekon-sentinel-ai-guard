@@ -37,7 +37,7 @@ const TypewriterText = ({ text, className }) => {
       variants={container}
       initial="hidden"
       animate="visible"
-      className={`flex flex-wrap justify-center overflow-hidden ${className}`}
+      className={`flex flex-wrap justify-center ${className}`}
     >
       {words.map((word, index) => (
         <motion.span
