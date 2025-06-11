@@ -74,7 +74,9 @@ const SolutionsSection = () => {
                 <div className="flex items-center space-x-3 mb-2">
                   {solution.icon}
                   <div>
-                    <CardTitle className="text-2xl text-navy-primary">{solution.title}</CardTitle>
+                    <CardTitle className="text-2xl text-navy-primary">
+                      <TypewriterText text={solution.title} />
+                    </CardTitle>
                     <p className="text-steel-blue font-medium">{solution.subtitle}</p>
                   </div>
                 </div>
@@ -103,7 +105,7 @@ const SolutionsSection = () => {
         <div className="bg-gradient-to-r from-navy-primary to-navy-secondary rounded-2xl p-8 md:p-12">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-white mb-4">
-              Powered by Advanced AI
+              <TypewriterText text="Powered by Advanced AI" />
             </h3>
             <p className="text-navy-light text-lg max-w-2xl mx-auto">
               Our proprietary AI models are trained on exclusive datasets and continuously learn from real-world security operations.
@@ -116,7 +118,9 @@ const SolutionsSection = () => {
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mb-4">
                   {feature.icon}
                 </div>
-                <h4 className="text-xl font-semibold text-white mb-2">{feature.title}</h4>
+                <h4 className="text-xl font-semibold text-white mb-2">
+                  <TypewriterText text={feature.title} />
+                </h4>
                 <p className="text-navy-light">{feature.description}</p>
               </div>
             ))}

@@ -47,9 +47,10 @@ const ProblemSection = () => {
                 <div className="mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                   {problem.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-navy-primary mb-3">
-                  {problem.title}
-                </h3>
+                <TypewriterText 
+                  text={problem.title} 
+                  className="text-lg font-semibold text-navy-primary mb-3"
+                />
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {problem.description}
                 </p>

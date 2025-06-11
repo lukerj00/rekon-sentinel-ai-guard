@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const TypewriterText = ({ text, className }) => {
+const TypewriterText = ({ text, className = "" }) => {
   const words = text.split(" ");
 
   const container = {

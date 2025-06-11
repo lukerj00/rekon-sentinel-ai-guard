@@ -63,7 +63,7 @@ const WhyAiRekonSection = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-navy-primary mb-3">
-                      {advantage.title}
+                      <TypewriterText text={advantage.title} />
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
                       {advantage.description}
