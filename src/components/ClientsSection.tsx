@@ -1,13 +1,16 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote, Shield, Activity, MapPin } from "lucide-react";
+
+import showsecLogo from "@/assets/showsec.png";
+import americanAirlinesLogo from "@/assets/american_airlines.png";
+import morpheusLogo from "@/assets/morpheus.png";
 
 const ClientsSection = () => {
   const clients = [
     {
       name: "Showsec",
       industry: "Event Security",
-      logo: <Shield className="w-8 h-8" />,
+      logo: showsecLogo,
       investment: "£150,000",
       commitment: "3-year partnership",
       description: "Leading event security company supporting our SecureEvent Pro development",
@@ -16,7 +19,7 @@ const ClientsSection = () => {
     {
       name: "American Airlines",
       industry: "Aviation",
-      logo: <Activity className="w-8 h-8" />,
+      logo: americanAirlinesLogo,
       investment: "$100,000",
       commitment: "AI Classification Tool",
       description: "Major airline funding our aviation security intelligence platform",
@@ -25,7 +28,7 @@ const ClientsSection = () => {
     {
       name: "Morpheus Risk",
       industry: "Risk Management",
-      logo: <MapPin className="w-8 h-8" />,
+      logo: morpheusLogo,
       investment: "Strategic Partner",
       commitment: "Technology Integration",
       description: "Risk management specialists enhancing our compliance capabilities",
@@ -51,10 +54,9 @@ const ClientsSection = () => {
             <Card key={index} className={`relative overflow-hidden border-2 hover:border-navy-primary/30 transition-all duration-300 hover:shadow-xl group`}>
               <div className={`absolute inset-0 bg-gradient-to-br ${client.gradient} opacity-50`}></div>
               <CardContent className="relative z-10 p-8 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-xl shadow-md mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {client.logo}
+                <div className="inline-flex items-center justify-center w-48 h-32 bg-white rounded-xl shadow-md mb-4 group-hover:scale-110 transition-transform duration-300 p-2">
+                  <img src={client.logo} alt={`${client.name} logo`} className="max-h-full max-w-full object-contain" />
                 </div>
-                <h3 className="text-2xl font-bold text-navy-primary mb-2">{client.name}</h3>
                 <p className="text-steel-blue font-medium mb-4">{client.industry}</p>
                 <p className="text-muted-foreground mb-6 leading-relaxed">{client.description}</p>
                 

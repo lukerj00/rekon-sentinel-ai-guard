@@ -1,6 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Shield, Activity, Search } from "lucide-react";
+import showsecLogo from "@/assets/showsec.png";
+import americanAirlinesLogo from "@/assets/american_airlines.png";
+import morpheusLogo from "@/assets/morpheus.png";
 
 const HeroSection = () => {
   return (
@@ -62,12 +64,12 @@ const HeroSection = () => {
           {/* Trusted by section */}
           <div className="mt-16 pt-8 border-t border-border/50">
             <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders</p>
-            <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="text-navy-secondary font-semibold text-lg">Showsec</div>
-              <div className="w-px h-8 bg-border"></div>
-              <div className="text-navy-secondary font-semibold text-lg">American Airlines</div>
-              <div className="w-px h-8 bg-border"></div>
-              <div className="text-navy-secondary font-semibold text-lg">Morpheus Risk</div>
+            <div className="flex justify-center items-center space-x-12 opacity-80">
+              <img src={showsecLogo} alt="Showsec logo" className="h-12 object-contain" />
+              <div className="w-px h-14 bg-border"></div>
+              <img src={americanAirlinesLogo} alt="American Airlines logo" className="h-14 object-contain" />
+              <div className="w-px h-14 bg-border"></div>
+              <img src={morpheusLogo} alt="Morpheus Risk logo" className="h-12 object-contain" />
             </div>
           </div>
         </div>

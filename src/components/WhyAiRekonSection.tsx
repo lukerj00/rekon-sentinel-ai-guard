@@ -1,6 +1,7 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Users, BarChart3, Settings } from "lucide-react";
+import showsecLogo from "@/assets/showsec.png";
+import americanAirlinesLogo from "@/assets/american_airlines.png";
 
 const WhyAiRekonSection = () => {
   const advantages = [
@@ -8,7 +9,14 @@ const WhyAiRekonSection = () => {
       icon: <Shield className="w-12 h-12 text-navy-primary" />,
       title: "Proprietary Data Advantage",
       description: "Exclusive access to 20+ years of sensitive security incident data from industry leaders. Our data flywheel creates an intelligence moat that competitors cannot replicate.",
-      highlight: "Unique datasets from Showsec & American Airlines"
+      highlight: (
+        <div className="flex items-center space-x-2">
+          <span>Unique datasets from</span>
+          <img src={showsecLogo} alt="Showsec logo" className="h-8" />
+          <span>&</span>
+          <img src={americanAirlinesLogo} alt="American Airlines logo" className="h-10" />
+        </div>
+      )
     },
     {
       icon: <Users className="w-12 h-12 text-steel-blue" />,
