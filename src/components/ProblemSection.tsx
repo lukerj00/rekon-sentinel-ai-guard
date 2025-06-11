@@ -1,6 +1,6 @@
-
 import { AlertTriangle, Clock, FileText, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import TypewriterText from "./TypewriterText";
 
 const ProblemSection = () => {
   const problems = [
@@ -30,9 +30,10 @@ const ProblemSection = () => {
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-primary mb-6">
-            Security Teams Are Overwhelmed
-          </h2>
+          <TypewriterText
+            text="Security Teams Are Overwhelmed"
+            className="text-4xl md:text-5xl font-bold text-navy-primary mb-6"
+          />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Traditional security risk management is failing organizations. Manual processes, 
             subjective assessments, and reactive approaches leave critical vulnerabilities unaddressed.

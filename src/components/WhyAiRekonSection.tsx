@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Users, BarChart3, Settings } from "lucide-react";
 import showsecLogo from "@/assets/showsec.png";
 import americanAirlinesLogo from "@/assets/american_airlines.png";
+import TypewriterText from "./TypewriterText";
 
 const WhyAiRekonSection = () => {
   const advantages = [
@@ -42,9 +43,10 @@ const WhyAiRekonSection = () => {
     <section id="why-us" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-primary mb-6">
-            Our Unfair Advantage
-          </h2>
+          <TypewriterText
+            text="Our Unfair Advantage"
+            className="text-4xl md:text-5xl font-bold text-navy-primary mb-6"
+          />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             aiRekon isn't just another AI company. We're security professionals who've built 
             the world's most sophisticated AI-augmented security intelligence platform.

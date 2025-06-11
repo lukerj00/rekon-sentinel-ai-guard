@@ -3,6 +3,7 @@ import { ArrowDown, Shield, Activity, Search } from "lucide-react";
 import showsecLogo from "@/assets/showsec.png";
 import americanAirlinesLogo from "@/assets/american_airlines.png";
 import morpheusLogo from "@/assets/morpheus.png";
+import TypewriterText from "./TypewriterText";
 
 const HeroSection = () => {
   return (
@@ -24,10 +25,10 @@ const HeroSection = () => {
           </div>
           
           {/* Main headline */}
-          <h1 className="text-5xl md:text-7xl font-bold text-navy-primary mb-6 leading-tight">
-            Transform Security
-            <span className="block text-steel-blue">With AI Intelligence</span>
-          </h1>
+          <TypewriterText 
+            text="Transform Security With AI Intelligence"
+            className="text-5xl md:text-7xl font-bold text-navy-primary mb-6 leading-tight"
+          />
           
           {/* Sub-headline */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">

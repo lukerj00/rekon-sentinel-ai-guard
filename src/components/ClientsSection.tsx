@@ -1,9 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote, Shield, Activity, MapPin } from "lucide-react";
-
 import showsecLogo from "@/assets/showsec.png";
 import americanAirlinesLogo from "@/assets/american_airlines.png";
 import morpheusLogo from "@/assets/morpheus.png";
+import TypewriterText from "./TypewriterText";
 
 const ClientsSection = () => {
   const clients = [
@@ -40,9 +40,10 @@ const ClientsSection = () => {
     <section id="clients" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-primary mb-6">
-            Trusted by Industry Leaders
-          </h2>
+          <TypewriterText
+            text="Trusted by Industry Leaders"
+            className="text-4xl md:text-5xl font-bold text-navy-primary mb-6"
+          />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Leading organizations are investing in aiRekon to transform their security operations. 
             Our partnerships provide exclusive data access and real-world validation.

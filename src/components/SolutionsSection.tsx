@@ -1,7 +1,7 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, Activity, Search, CheckCircle2, Zap, BarChart3 } from "lucide-react";
+import TypewriterText from "./TypewriterText";
 
 const SolutionsSection = () => {
   const solutions = [
@@ -56,9 +56,10 @@ const SolutionsSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-primary mb-6">
-            AI-Augmented Security Solutions
-          </h2>
+          <TypewriterText
+            text="AI-Augmented Security Solutions"
+            className="text-4xl md:text-5xl font-bold text-navy-primary mb-6"
+          />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Transform your security operations with intelligent automation that learns, adapts, and evolves with your organization's needs.
           </p>
