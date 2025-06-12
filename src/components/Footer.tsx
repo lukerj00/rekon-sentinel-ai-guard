@@ -1,7 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Shield, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import airekonLogo from "@/assets/airekon.png";
 
 const Footer = () => {
   return (
@@ -32,12 +32,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
-                <Shield className="w-5 h-5 text-navy-primary" />
-              </div>
-              <span className="text-xl font-bold">aiRekon</span>
-            </div>
+            <a href="#" className="flex items-center space-x-2 mb-4">
+              <img src={airekonLogo} alt="aiRekon logo" className="h-8" />
+            </a>
             <p className="text-navy-light mb-6 leading-relaxed">
               AI-augmented security intelligence platform transforming how organizations manage 
               terrorism, security, and safety risks. Built by security professionals for security professionals.
