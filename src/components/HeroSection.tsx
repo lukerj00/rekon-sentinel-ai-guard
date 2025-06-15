@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Shield, Activity, Search, Lock, Eye, AlertTriangle } from "lucide-react";
 import showsecLogo from "@/assets/showsec.png";
@@ -23,7 +24,9 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
+      {/* Security-themed background pattern */}
+      <div className="absolute inset-0 security-pattern"></div>
+      <div className="absolute inset-0 circuit-pattern animate-network-pulse"></div>
       <div className="absolute inset-0 gradient-navy opacity-5"></div>
       
       {/* Security-themed floating elements */}
