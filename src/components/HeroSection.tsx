@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Shield, Activity, Search, Lock, Eye, AlertTriangle } from "lucide-react";
 import showsecLogo from "@/assets/showsec.png";
@@ -23,27 +24,29 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
+      {/* Security-themed background patterns - lower z-index */}
+      <div className="absolute inset-0 security-pattern opacity-60"></div>
+      <div className="absolute inset-0 circuit-pattern opacity-40"></div>
       <div className="absolute inset-0 gradient-navy opacity-5"></div>
       
       {/* Security-themed floating elements */}
-      <div className="absolute top-20 left-10 w-8 h-8 bg-navy-primary/20 rounded-lg flex items-center justify-center animate-float opacity-60">
+      <div className="absolute top-20 left-10 w-8 h-8 bg-navy-primary/20 rounded-lg flex items-center justify-center animate-float opacity-60 z-10">
         <Shield className="w-4 h-4 text-navy-primary" />
       </div>
-      <div className="absolute top-40 right-20 w-10 h-10 bg-accent-blue/20 rounded-full flex items-center justify-center animate-float opacity-40" style={{animationDelay: '2s'}}>
+      <div className="absolute top-40 right-20 w-10 h-10 bg-accent-blue/20 rounded-full flex items-center justify-center animate-float opacity-40 z-10" style={{animationDelay: '2s'}}>
         <Lock className="w-5 h-5 text-accent-blue" />
       </div>
-      <div className="absolute bottom-40 left-20 w-6 h-6 bg-steel-blue/30 rounded-lg flex items-center justify-center animate-float opacity-50" style={{animationDelay: '4s'}}>
+      <div className="absolute bottom-40 left-20 w-6 h-6 bg-steel-blue/30 rounded-lg flex items-center justify-center animate-float opacity-50 z-10" style={{animationDelay: '4s'}}>
         <Eye className="w-3 h-3 text-steel-blue" />
       </div>
-      <div className="absolute top-60 left-1/4 w-7 h-7 bg-success-green/20 rounded-full flex items-center justify-center animate-float opacity-45" style={{animationDelay: '1s'}}>
+      <div className="absolute top-60 left-1/4 w-7 h-7 bg-success-green/20 rounded-full flex items-center justify-center animate-float opacity-45 z-10" style={{animationDelay: '1s'}}>
         <AlertTriangle className="w-4 h-4 text-success-green" />
       </div>
-      <div className="absolute bottom-60 right-1/4 w-9 h-9 bg-navy-secondary/25 rounded-lg flex items-center justify-center animate-float opacity-55" style={{animationDelay: '3s'}}>
+      <div className="absolute bottom-60 right-1/4 w-9 h-9 bg-navy-secondary/25 rounded-lg flex items-center justify-center animate-float opacity-55 z-10" style={{animationDelay: '3s'}}>
         <Search className="w-4 h-4 text-navy-secondary" />
       </div>
       
-      <motion.div className="container mx-auto px-4 py-20 text-center relative z-10" variants={container}>
+      <motion.div className="container mx-auto px-4 py-20 text-center relative z-20" variants={container}>
         <motion.div className="max-w-4xl mx-auto" variants={container}>
           {/* Badge */}
           <motion.div variants={item} className="inline-flex items-center space-x-2 bg-navy-light/20 text-navy-secondary px-4 py-2 rounded-full text-sm font-medium mb-8">
