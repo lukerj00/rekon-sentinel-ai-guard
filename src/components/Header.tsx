@@ -1,7 +1,14 @@
+
 import { Button } from "@/components/ui/button";
 import airekonLogo from "@/assets/airekon.png";
 
 const Header = () => {
+  const handleRequestDemo = () => {
+    // Add hash to URL and scroll to contact section
+    window.location.hash = 'contact-demo';
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -24,7 +31,10 @@ const Header = () => {
           </a>
         </nav>
 
-        <Button className="gradient-navy text-white hover:opacity-90 transition-opacity">
+        <Button 
+          className="gradient-navy text-white hover:opacity-90 transition-opacity"
+          onClick={handleRequestDemo}
+        >
           Request Demo
         </Button>
       </div>
