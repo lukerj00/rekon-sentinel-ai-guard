@@ -1,7 +1,9 @@
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 
-const TypewriterText = ({ text, className = "" }) => {
+const TypewriterText = ({ text, className = "", el = "div", justify = "center" }) => {
   const words = text.split(" ");
+
+  const MotionWrapper = motion[el];
 
   const container = {
     hidden: { opacity: 0 },
@@ -19,7 +21,7 @@ const TypewriterText = ({ text, className = "" }) => {
         type: "spring",
         damping: 12,
         stiffness: 100,
-      },
+      } as Transition,
     },
     hidden: {
       opacity: 0,
@@ -28,16 +30,16 @@ const TypewriterText = ({ text, className = "" }) => {
         type: "spring",
         damping: 12,
         stiffness: 100,
-      },
+      } as Transition,
     },
   };
 
   return (
-    <motion.div
+    <MotionWrapper
       variants={container}
       initial="hidden"
       animate="visible"
-      className={`flex flex-wrap justify-center ${className}`}
+      className={`flex flex-wrap ${className}`}
     >
       {words.map((word, index) => (
         <motion.span
@@ -48,7 +50,7 @@ const TypewriterText = ({ text, className = "" }) => {
           {word}
         </motion.span>
       ))}
-    </motion.div>
+    </MotionWrapper>
   );
 };
 

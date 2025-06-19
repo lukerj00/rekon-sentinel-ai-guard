@@ -37,7 +37,7 @@ const SolutionsSection = () => {
       icon: <MapPin className="w-8 h-8 text-steel-blue" />,
       description: "Live data integration for Transport for London enabling real-time security monitoring across the network.",
       features: [
-        "Live CCTV & IoT feed integration",
+        "Live data feed integration",
         "Automated incident triage",
         "Crowd flow analytics",
         "Custom dashboards for TfL"
@@ -84,11 +84,14 @@ const SolutionsSection = () => {
             <Card key={index} className={`relative overflow-hidden border-2 hover:border-navy-primary/30 transition-all duration-300 hover:shadow-xl group flex flex-col`}>
               <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-50`}></div>
               <CardHeader className="relative z-10">
-                <div className="flex items-center space-x-3 mb-2">
-                  {solution.icon}
-                  <div>
+                <div className="flex items-start space-x-3 mb-2">
+                  <div className="flex-shrink-0 pt-1">{solution.icon}</div>
+                  <div className="text-left">
                     <CardTitle className="text-2xl text-navy-primary">
-                      <TypewriterText text={solution.title} />
+                      <TypewriterText 
+                        text={solution.title} 
+                        className="text-2xl text-navy-primary font-semibold justify-start" 
+                      />
                     </CardTitle>
                     <p className="text-steel-blue font-medium">{solution.subtitle}</p>
                   </div>

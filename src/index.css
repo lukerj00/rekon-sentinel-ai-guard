@@ -150,5 +150,5 @@ html {
 
 /* Any element that can be navigated to via an in-page link should leave enough space for the fixed header */
 section[id] {
-  scroll-margin-top: 2rem; /* equals 32 which is ~the header height */
+  scroll-margin-top: 3rem; /* equals 48 which is ~the header height */
 }
