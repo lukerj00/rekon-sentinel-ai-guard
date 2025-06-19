@@ -1,4 +1,3 @@
-```
 # Project Map: aiRekon - AI-Augmented Security Intelligence
 
 This document provides an overview of the aiRekon website project, detailing its structure, core functionalities, and technology stack.
@@ -11,7 +10,7 @@ The project is a React application built with Vite and TypeScript, following a c
 * **Main Application:** `src/main.tsx` renders the primary `App` component into the DOM.
 * **Routing:** `src/App.tsx` sets up client-side routing using `react-router-dom`, defining routes for the home page (`/`) and a 404 Not Found page (`*`).
 * **Pages:**
-    * `src/pages/Index.tsx`: The main landing page, composed of various sections (Hero, Problem, Solutions, Why aiRekon, Clients, Footer).
+    * `src/pages/Index.tsx`: The main landing page, composed of various sections (Hero, Problem, Solutions, Why aiRekon, Clients, Contact, Footer).
     * `src/pages/NotFound.tsx`: A simple 404 error page for non-existent routes.
 * **Components:**
     * `src/components/Header.tsx`: Navigation bar with logo, menu links, and a "Request Demo" button.
@@ -20,6 +19,7 @@ The project is a React application built with Vite and TypeScript, following a c
     * `src/components/SolutionsSection.tsx`: Presents aiRekon's AI-augmented security solutions with detailed features and core AI capabilities.
     * `src/components/WhyAiRekonSection.tsx`: Explains the company's unique advantages, including data, expertise, efficiency, and architecture, along with statistics.
     * `src/components/ClientsSection.tsx`: Showcases client testimonials and trust indicators like ISO 27001, SOC 2, and GDPR.
+    * `src/components/ContactSection.tsx`: Interactive contact form that submits inquiries to Supabase and displays toast feedback.
     * `src/components/Footer.tsx`: Provides a call-to-action, company contact information, solution links, company links, and legal notices.
     * `src/components/TypewriterText.tsx`: A reusable component for animating text in a typewriter style.
     * `src/components/ScrollAnimatedSection.tsx`: A wrapper component for animating sections as they scroll into view using `framer-motion` and `react-intersection-observer`.
@@ -54,16 +54,23 @@ The website is a static marketing site designed to showcase aiRekon's security i
     * `ScrollAnimatedSection.tsx` implements scroll-triggered animations for major sections of the homepage, enhancing visual engagement.
     * The `HeroSection` includes floating elements and pulse animations (`index.css`) to create a dynamic and security-themed visual experience.
 * **Client Showcase:** The `ClientsSection` displays client logos, industry information, investment details, and a testimonial to build trust and credibility.
-* **Call-to-Action (CTA):** Multiple sections, including the Hero and Footer, feature "Request Demo" or "Get Demo" buttons, indicating a primary conversion goal.
+* **Call-to-Action (CTA):** Multiple sections, including the Hero, Contact, and Footer, feature "Request Demo", "Send Message", or "Get Demo" buttons, indicating primary conversion goals.
 * **Information Display:**
     * The `ProblemSection` clearly outlines key challenges in security using icon-supported cards.
     * The `SolutionsSection` details the company's main offerings, "SecureEvent Pro" and "SecureFlight Pro," including their features and underlying AI technologies.
     * The `WhyAiRekonSection` emphasizes the company's competitive advantages and key statistics.
 * **Footer Navigation and Contact:** The footer provides essential links and contact information, along with legal disclaimers.
+* **Contact Form & Data Capture:** The `ContactSection` collects visitor details and saves them to Supabase, with real-time toast notifications on success or error.
 
-## 3. Database (Supabase)
+## 3. Data Layer (Supabase)
 
-The `README.md` file mentions **Supabase** as a project information source, specifically its project URL: `https://lovable.dev/projects/4a4f7355-406e-42de-9cdc-8a9bc0c678bf`.
+The project integrates directly with **Supabase** for persisting contact-form submissions.
 
-However, the provided repository files do **not** contain direct database schema definitions, API interaction code (e.g., Supabase client initialization or queries), or detailed table/column descriptions. Therefore, specific database functionalities or structures cannot be mapped from the current codebase. Any database interactions would likely occur server-side or through a separate API layer not present in these frontend files.
+* `src/integrations/supabase/client.ts`: Instantiates a typed Supabase client (`createClient`) with the project URL and public anonymous key.
+* `src/integrations/supabase/types.ts`: Generated TypeScript types mirroring the database schema. Currently defines the `contact_submissions` table with fields `id`, `name`, `email`, `company`, `message`, `inquiry_type`, and `created_at`.
+* `supabase/` – Infrastructure for local database management:
+  * `config.toml` – Supabase CLI configuration.
+  * `migrations/*.sql` – SQL migrations that create and evolve the `contact_submissions` table.
+
+The `ContactSection` component uses the Supabase client to insert new rows into `contact_submissions`, providing toast feedback to the user.
 ```
