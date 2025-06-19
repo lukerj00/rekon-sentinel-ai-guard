@@ -49,7 +49,7 @@ const ProblemSection = () => {
                 </div>
                 <TypewriterText 
                   text={problem.title} 
-                  className="text-lg font-semibold text-navy-primary mb-3"
+                  className="text-lg font-semibold text-navy-primary mb-3 justify-center"
                 />
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {problem.description}

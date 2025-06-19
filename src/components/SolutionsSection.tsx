@@ -121,7 +121,7 @@ const SolutionsSection = () => {
         <div className="bg-gradient-to-r from-navy-primary to-navy-secondary rounded-2xl p-8 md:p-12">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-white mb-4">
-              <TypewriterText text="Powered by Advanced AI" />
+              <TypewriterText text="Powered by Advanced AI" className="justify-center" />
             </h3>
             <p className="text-navy-light text-lg max-w-2xl mx-auto">
               Our proprietary AI models are trained on exclusive datasets and continuously learn from real-world security operations.
@@ -135,7 +135,7 @@ const SolutionsSection = () => {
                   {feature.icon}
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-2">
-                  <TypewriterText text={feature.title} />
+                  <TypewriterText text={feature.title} className="justify-center" />
                 </h4>
                 <p className="text-navy-light">{feature.description}</p>
               </div>
