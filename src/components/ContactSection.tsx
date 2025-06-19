@@ -1,9 +1,10 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -13,16 +14,35 @@ const ContactSection = () => {
     name: "",
     email: "",
     company: "",
-    message: ""
+    message: "",
+    inquiry_type: "General Inquiry"
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    // Check if URL has hash parameter for demo request
+    const urlHash = window.location.hash;
+    if (urlHash === '#contact-demo') {
+      setFormData(prev => ({
+        ...prev,
+        inquiry_type: "Request a Demo"
+      }));
+    }
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
+    }));
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      inquiry_type: value
     }));
   };
 
@@ -37,7 +57,8 @@ const ContactSection = () => {
           name: formData.name,
           email: formData.email,
           company: formData.company || null,
-          message: formData.message
+          message: formData.message,
+          inquiry_type: formData.inquiry_type
         }]);
 
       if (error) {
@@ -54,7 +75,8 @@ const ContactSection = () => {
         name: "",
         email: "",
         company: "",
-        message: ""
+        message: "",
+        inquiry_type: "General Inquiry"
       });
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -168,6 +190,24 @@ const ContactSection = () => {
                     onChange={handleInputChange}
                     placeholder="Your company name"
                   />
+                </div>
+
+                <div>
+                  <label htmlFor="inquiry_type" className="block text-sm font-medium mb-2">
+                    Inquiry Type *
+                  </label>
+                  <Select value={formData.inquiry_type} onValueChange={handleSelectChange}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select inquiry type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Request a Demo">Request a Demo</SelectItem>
+                      <SelectItem value="General Inquiry">General Inquiry</SelectItem>
+                      <SelectItem value="Partnership Opportunities">Partnership Opportunities</SelectItem>
+                      <SelectItem value="Support Question">Support Question</SelectItem>
+                      <SelectItem value="Press/Media">Press/Media</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div>

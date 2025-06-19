@@ -15,6 +15,7 @@ export type Database = {
           created_at: string
           email: string
           id: string
+          inquiry_type: string
           message: string
           name: string
         }
@@ -23,6 +24,7 @@ export type Database = {
           created_at?: string
           email: string
           id?: string
+          inquiry_type?: string
           message: string
           name: string
         }
@@ -31,6 +33,7 @@ export type Database = {
           created_at?: string
           email?: string
           id?: string
+          inquiry_type?: string
           message?: string
           name?: string
         }
