@@ -1,11 +1,11 @@
-
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Shield, Activity, Search, Lock, Eye, AlertTriangle } from "lucide-react";
+import { ArrowDown, Shield, Activity, Search, Lock, Eye, AlertTriangle, ArrowRight } from "lucide-react";
 import showsecLogo from "@/assets/showsec.png";
 import americanAirlinesLogo from "@/assets/american_airlines.png";
 import morpheusLogo from "@/assets/morpheus.png";
 import TypewriterText from "./TypewriterText";
 import { motion } from "framer-motion";
+import { buttonVariants } from "@/components/ui/button";
 
 const HeroSection = () => {
   const container = {
@@ -20,6 +20,15 @@ const HeroSection = () => {
   const item = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const handleRequestDemo = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      window.location.hash = 'contact-demo';
+    }
   };
 
   return (
@@ -89,12 +98,16 @@ const HeroSection = () => {
           
           {/* CTA buttons */}
           <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="gradient-navy text-white px-8 py-3 text-lg hover:opacity-90 transition-opacity animate-pulse-glow">
+            <a href="#contact" onClick={handleRequestDemo} className={buttonVariants({ size: "lg" })}>
               Request Demo
-            </Button>
-            <Button variant="outline" size="lg" className="border-navy-primary text-navy-primary hover:bg-navy-primary hover:text-white px-8 py-3 text-lg transition-all">
-              View Case Studies
-            </Button>
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+            <a 
+              href="#solutions" 
+              className={buttonVariants({ variant: "outline", size: "lg" })}
+            >
+              Learn More
+            </a>
           </motion.div>
           
           {/* Trusted by section */}

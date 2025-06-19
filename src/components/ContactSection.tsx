@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,14 +20,24 @@ const ContactSection = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Check if URL has hash parameter for demo request
-    const urlHash = window.location.hash;
-    if (urlHash === '#contact-demo') {
-      setFormData(prev => ({
-        ...prev,
-        inquiry_type: "Request a Demo"
-      }));
-    }
+    const handleHashChange = () => {
+      if (window.location.hash === '#contact-demo') {
+        setFormData(prev => ({
+          ...prev,
+          inquiry_type: "Request a Demo"
+        }));
+      }
+    };
+
+    // Initial check
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange, false);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange, false);
+    };
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
