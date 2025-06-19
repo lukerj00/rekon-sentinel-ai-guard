@@ -77,7 +77,7 @@ const ContactSection = () => {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Ready to transform your security operations? Contact our team to learn more about 
-            AI Rekon's solutions and schedule a personalized demo.
+            AI Rekon's solutions and schedule a personalised demo.
           </p>
         </div>
 
