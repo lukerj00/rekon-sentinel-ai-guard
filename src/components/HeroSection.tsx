@@ -68,7 +68,7 @@ const HeroSection = () => {
           <motion.div variants={item}>
             <TypewriterText 
               text="Transform Security With AI Intelligence"
-              className="text-5xl md:text-7xl font-bold text-navy-primary mb-6 leading-tight"
+              className="text-5xl md:text-7xl font-bold text-navy-primary mb-6 leading-tight justify-center"
             />
           </motion.div>
           

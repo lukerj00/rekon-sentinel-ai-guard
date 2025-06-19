@@ -52,7 +52,7 @@ const ClientsSection = () => {
         <div className="text-center mb-16">
           <TypewriterText
             text="Trusted by Industry Leaders"
-            className="text-4xl md:text-5xl font-bold text-navy-primary mb-6"
+            className="text-4xl md:text-5xl font-bold text-navy-primary mb-6 justify-center"
           />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Leading organizations are investing in AI Rekon to transform their security operations. 

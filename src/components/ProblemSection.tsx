@@ -32,7 +32,7 @@ const ProblemSection = () => {
         <div className="text-center mb-16">
           <TypewriterText
             text="Security Teams Are Overwhelmed"
-            className="text-4xl md:text-5xl font-bold text-navy-primary mb-6"
+            className="text-4xl md:text-5xl font-bold text-navy-primary mb-6 justify-center"
           />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Traditional security risk management is failing organizations. Manual processes, 

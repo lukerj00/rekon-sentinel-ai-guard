@@ -45,7 +45,7 @@ const WhyAiRekonSection = () => {
         <div className="text-center mb-16">
           <TypewriterText
             text="Our Unfair Advantage"
-            className="text-4xl md:text-5xl font-bold text-navy-primary mb-6"
+            className="text-4xl md:text-5xl font-bold text-navy-primary mb-6 justify-center"
           />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             AI Rekon isn't just another AI company. We're security professionals who've built 
