@@ -22,7 +22,7 @@ const Header = () => {
         
         <nav className="hidden md:flex items-center space-x-6">
           <a href="#solutions" className="text-sm font-medium hover:text-primary transition-colors">Solutions</a>
-          <a href="#why-airekon" className="text-sm font-medium hover:text-primary transition-colors">Why AI Rekon</a>
+          <a href="#why-us" className="text-sm font-medium hover:text-primary transition-colors">Why AI Rekon</a>
           <a href="#clients" className="text-sm font-medium hover:text-primary transition-colors">Clients</a>
           <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
         </nav>
@@ -41,7 +41,7 @@ const Header = () => {
             <SheetContent>
               <div className="flex flex-col space-y-2 mt-6">
                 <a href="#solutions" className="block w-full text-left p-2 rounded-md hover:bg-muted">Solutions</a>
-                <a href="#why-airekon" className="block w-full text-left p-2 rounded-md hover:bg-muted">Why AI Rekon</a>
+                <a href="#why-us" className="block w-full text-left p-2 rounded-md hover:bg-muted">Why AI Rekon</a>
                 <a href="#clients" className="block w-full text-left p-2 rounded-md hover:bg-muted">Clients</a>
                 <a href="#contact" className="block w-full text-left p-2 rounded-md hover:bg-muted">Contact</a>
               </div>
