@@ -45,7 +45,7 @@ const ClientsSection = () => {
             className="text-4xl md:text-5xl font-bold text-navy-primary mb-6"
           />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Leading organizations are investing in aiRekon to transform their security operations. 
+            Leading organizations are investing in AI Rekon to transform their security operations. 
             Our partnerships provide exclusive data access and real-world validation.
           </p>
         </div>
@@ -76,7 +76,7 @@ const ClientsSection = () => {
         <div className="bg-gradient-to-r from-navy-primary to-navy-secondary rounded-2xl p-8 md:p-12 text-center">
           <Quote className="w-12 h-12 text-white/60 mx-auto mb-6" />
           <blockquote className="text-2xl md:text-3xl text-white font-medium mb-6 leading-relaxed">
-            "aiRekon's AI-augmented approach has transformed how we think about security risk management. 
+            "AI Rekon's AI-augmented approach has transformed how we think about security risk management. 
             The combination of cutting-edge technology and deep domain expertise is unmatched."
           </blockquote>
           <div className="text-navy-light">

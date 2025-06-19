@@ -14,7 +14,7 @@ const Header = () => {
             Solutions
           </a>
           <a href="#why-us" className="text-muted-foreground hover:text-foreground transition-colors">
-            Why aiRekon
+            Why AI Rekon
           </a>
           <a href="#clients" className="text-muted-foreground hover:text-foreground transition-colors">
             Clients

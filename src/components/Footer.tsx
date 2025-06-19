@@ -13,7 +13,7 @@ const Footer = () => {
             Ready to Transform Your Security Operations?
           </h2>
           <p className="text-navy-light text-lg mb-8 max-w-2xl mx-auto">
-            Join leading organizations using aiRekon to automate security workflows and predict emerging threats.
+            Join leading organizations using AI Rekon to automate security workflows and predict emerging threats.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <Input 
@@ -42,11 +42,11 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-navy-light">
                 <Mail className="w-4 h-4" />
-                <span>contact@airekon.ai</span>
+                <span>hello@airekon.com</span>
               </div>
               <div className="flex items-center space-x-2 text-navy-light">
                 <Phone className="w-4 h-4" />
-                <span>+44 (0) 20 1234 5678</span>
+                <span>+44 (0) 7752 226 445</span>
               </div>
               <div className="flex items-center space-x-2 text-navy-light">
                 <MapPin className="w-4 h-4" />
@@ -81,7 +81,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-navy-light text-sm">
-            © 2024 aiRekon. All rights reserved.
+            © 2025 AI Rekon. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-navy-light mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
