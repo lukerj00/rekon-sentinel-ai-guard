@@ -6,27 +6,6 @@ import airekonLogo from "@/assets/airekon.png";
 const Footer = () => {
   return (
     <footer className="bg-navy-primary text-white">
-      {/* CTA Section */}
-      <div className="border-b border-white/10">
-        <div className="container mx-auto px-4 py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Security Operations?
-          </h2>
-          <p className="text-navy-light text-lg mb-8 max-w-2xl mx-auto">
-            Join leading organizations using AI Rekon to automate security workflows and predict emerging threats.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <Input 
-              placeholder="Enter your email" 
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-            />
-            <Button className="bg-white text-navy-primary hover:bg-navy-light transition-colors">
-              Get Demo
-            </Button>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
