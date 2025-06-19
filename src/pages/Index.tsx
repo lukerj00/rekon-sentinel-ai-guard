@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -5,6 +6,7 @@ import ProblemSection from "@/components/ProblemSection";
 import SolutionsSection from "@/components/SolutionsSection";
 import WhyAiRekonSection from "@/components/WhyAiRekonSection";
 import ClientsSection from "@/components/ClientsSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ScrollAnimatedSection from "@/components/ScrollAnimatedSection";
 
@@ -33,6 +35,9 @@ const Index = () => {
       </ScrollAnimatedSection>
       <ScrollAnimatedSection>
         <ClientsSection />
+      </ScrollAnimatedSection>
+      <ScrollAnimatedSection>
+        <ContactSection />
       </ScrollAnimatedSection>
       <Footer />
     </div>
