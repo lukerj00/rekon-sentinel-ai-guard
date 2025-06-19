@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Shield, Activity, Search, CheckCircle2, Zap, BarChart3, MapPin } from "lucide-react";
 import TypewriterText from "./TypewriterText";
 
@@ -63,6 +63,15 @@ const SolutionsSection = () => {
       description: "Identify trends and forecast risks before they materialize"
     }
   ];
+
+  const handleSeeHowItWorksClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      window.location.hash = 'contact-demo';
+    }
+  };
 
   return (
     <section id="solutions" className="py-20">
@@ -143,9 +152,13 @@ const SolutionsSection = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-white text-navy-primary hover:bg-navy-light transition-colors px-8 py-3">
+            <a 
+              href="/#contact-demo"
+              onClick={handleSeeHowItWorksClick}
+              className={buttonVariants({ size: "lg", variant: "default", className: "bg-white text-navy-primary hover:bg-navy-light transition-colors px-8 py-3"})}
+            >
               See How It Works
-            </Button>
+            </a>
           </div>
         </div>
       </div>
