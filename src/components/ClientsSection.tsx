@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Quote, Shield, Activity, MapPin } from "lucide-react";
 import showsecLogo from "@/assets/showsec.png";
 import americanAirlinesLogo from "@/assets/american_airlines.png";
+import tflLogo from "@/assets/tfl.png";
 import morpheusLogo from "@/assets/morpheus.png";
 import TypewriterText from "./TypewriterText";
 
@@ -24,6 +25,15 @@ const ClientsSection = () => {
       commitment: "AI Classification Tool",
       description: "Major airline funding our aviation security intelligence platform",
       gradient: "from-accent-blue/20 to-navy-light/20"
+    },
+    {
+      name: "Transport for London",
+      industry: "Transport",
+      logo: tflLogo,
+      investment: "Custom Solution",
+      commitment: "Live Data Integration",
+      description: "Developing a real-time security intelligence platform across London's transport network",
+      gradient: "from-steel-blue/20 to-navy-light/20"
     },
     {
       name: "Morpheus Risk",
@@ -50,7 +60,7 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {clients.map((client, index) => (
             <Card key={index} className={`relative overflow-hidden border-2 hover:border-navy-primary/30 transition-all duration-300 hover:shadow-xl group`}>
               <div className={`absolute inset-0 bg-gradient-to-br ${client.gradient} opacity-50`}></div>

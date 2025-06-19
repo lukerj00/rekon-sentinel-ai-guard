@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Shield, Activity, Search, Lock, Eye, AlertTriangle, ArrowRight } from "lucide-react";
 import showsecLogo from "@/assets/showsec.png";
 import americanAirlinesLogo from "@/assets/american_airlines.png";
+import tflLogo from "@/assets/tfl.png";
 import morpheusLogo from "@/assets/morpheus.png";
 import TypewriterText from "./TypewriterText";
 import { motion } from "framer-motion";
@@ -117,6 +118,8 @@ const HeroSection = () => {
               <img src={showsecLogo} alt="Showsec logo" className="h-12 object-contain" />
               <div className="w-px h-14 bg-border"></div>
               <img src={americanAirlinesLogo} alt="American Airlines logo" className="h-14 object-contain" />
+              <div className="w-px h-14 bg-border"></div>
+              <img src={tflLogo} alt="Transport for London logo" className="h-12 object-contain" />
               <div className="w-px h-14 bg-border"></div>
               <img src={morpheusLogo} alt="Morpheus Risk logo" className="h-12 object-contain" />
             </div>

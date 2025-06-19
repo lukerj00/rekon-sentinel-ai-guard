@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shield, Activity, Search, CheckCircle2, Zap, BarChart3 } from "lucide-react";
+import { Shield, Activity, Search, CheckCircle2, Zap, BarChart3, MapPin } from "lucide-react";
 import TypewriterText from "./TypewriterText";
 
 const SolutionsSection = () => {
@@ -30,6 +30,19 @@ const SolutionsSection = () => {
         "Enhanced passenger safety"
       ],
       gradient: "from-accent-blue/20 to-navy-light/20"
+    },
+    {
+      title: "SecureTransit Pro",
+      subtitle: "Transport Operations Intelligence (TfL)",
+      icon: <MapPin className="w-8 h-8 text-steel-blue" />,
+      description: "Live data integration for Transport for London enabling real-time security monitoring across the network.",
+      features: [
+        "Live CCTV & IoT feed integration",
+        "Automated incident triage",
+        "Crowd flow analytics",
+        "Custom dashboards for TfL"
+      ],
+      gradient: "from-steel-blue/20 to-navy-light/20"
     }
   ];
 
@@ -66,9 +79,9 @@ const SolutionsSection = () => {
         </div>
 
         {/* Main Products */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {solutions.map((solution, index) => (
-            <Card key={index} className={`relative overflow-hidden border-2 hover:border-navy-primary/30 transition-all duration-300 hover:shadow-xl group`}>
+            <Card key={index} className={`relative overflow-hidden border-2 hover:border-navy-primary/30 transition-all duration-300 hover:shadow-xl group flex flex-col`}>
               <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-50`}></div>
               <CardHeader className="relative z-10">
                 <div className="flex items-center space-x-3 mb-2">
@@ -81,8 +94,8 @@ const SolutionsSection = () => {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="relative z-10">
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+              <CardContent className="relative z-10 flex flex-col flex-grow">
+                <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
                   {solution.description}
                 </p>
                 <ul className="space-y-2 mb-6">
