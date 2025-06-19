@@ -6,7 +6,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <a href="#" className="flex items-center space-x-2">
-          <img src={airekonLogo} alt="aiRekon logo" className="h-8" />
+          <img src={airekonLogo} alt="aiRekon logo" className="h-6" />
         </a>
         
         <nav className="hidden md:flex items-center space-x-8">
