@@ -12,25 +12,25 @@ const ClientsSection = () => {
       name: "Showsec",
       industry: "Event Security",
       logo: showsecLogo,
-      investment: "£150,000",
-      commitment: "3-year partnership",
-      description: "Leading event security company supporting our SecureEvent Pro development",
+      investment: "SecureEvent Pro",
+      commitment: "Event security management",
+      description: "Leading event security company supporting our events security platform",
       gradient: "from-success-green/20 to-navy-light/20"
     },
     {
       name: "American Airlines",
       industry: "Aviation",
       logo: americanAirlinesLogo,
-      investment: "$100,000",
-      commitment: "AI Classification Tool",
-      description: "Major airline funding our aviation security intelligence platform",
+      investment: "SecureFlight Pro",
+      commitment: "Aviation risk classification",
+      description: "Major airline supporting our aviation security intelligence platform",
       gradient: "from-accent-blue/20 to-navy-light/20"
     },
     {
       name: "Transport for London",
       industry: "Transport",
       logo: tflLogo,
-      investment: "Custom Solution",
+      investment: "SecureTransit Pro",
       commitment: "Live Data Integration",
       description: "Developing a real-time security intelligence platform across London's transport network",
       gradient: "from-steel-blue/20 to-navy-light/20"
@@ -92,26 +92,6 @@ const ClientsSection = () => {
           <div className="text-navy-light">
             <div className="font-semibold">Industry Partner</div>
             <div className="text-sm opacity-80">Security Operations Leader</div>
-          </div>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center space-x-8 bg-white rounded-xl p-6 shadow-lg">
-            <div className="text-center">
-              <Shield className="w-8 h-8 text-success-green mx-auto mb-2" />
-              <div className="text-sm font-medium text-navy-primary">ISO 27001</div>
-            </div>
-            <div className="w-px h-8 bg-border"></div>
-            <div className="text-center">
-              <Activity className="w-8 h-8 text-accent-blue mx-auto mb-2" />
-              <div className="text-sm font-medium text-navy-primary">SOC 2</div>
-            </div>
-            <div className="w-px h-8 bg-border"></div>
-            <div className="text-center">
-              <MapPin className="w-8 h-8 text-steel-blue mx-auto mb-2" />
-              <div className="text-sm font-medium text-navy-primary">GDPR</div>
-            </div>
           </div>
         </div>
       </div>

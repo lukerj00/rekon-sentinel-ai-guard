@@ -97,9 +97,9 @@ const SolutionsSection = () => {
                   <div className="flex-shrink-0 pt-1">{solution.icon}</div>
                   <div className="text-left">
                     <CardTitle className="text-2xl text-navy-primary">
-                      <TypewriterText 
-                        text={solution.title} 
-                        className="text-2xl text-navy-primary font-semibold justify-start" 
+                      <TypewriterText
+                        text={solution.title}
+                        className="text-2xl text-navy-primary font-semibold justify-start"
                       />
                     </CardTitle>
                     <p className="text-steel-blue font-medium">{solution.subtitle}</p>
@@ -126,6 +126,23 @@ const SolutionsSection = () => {
           ))}
         </div>
 
+        {/* Custom Solutions Section */}
+        <div className="bg-navy-light/10 rounded-2xl p-8 md:p-10 text-center mb-16">
+          <h3 className="text-2xl md:text-3xl font-bold text-navy-primary mb-4">
+            <TypewriterText text="Need a Custom Solution?" className="justify-center" />
+          </h3>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
+            Beyond our off-the-shelf products, we partner with clients to design and deploy bespoke AI security solutions tailored to unique operational challenges and specific regulatory environments. Let's build something together.
+          </p>
+          <a
+            href="/#contact"
+            className={buttonVariants({ variant: "default", className: "bg-navy-primary hover:bg-navy-secondary text-white" })}
+          >
+            Discuss Your Needs
+          </a>
+        </div>
+
+
         {/* Core AI Features */}
         <div className="bg-gradient-to-r from-navy-primary to-navy-secondary rounded-2xl p-8 md:p-12">
           <div className="text-center mb-12">
@@ -136,7 +153,7 @@ const SolutionsSection = () => {
               Our proprietary AI models are trained on exclusive datasets and continuously learn from real-world security operations.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {coreFeatures.map((feature, index) => (
               <div key={index} className="text-center">
@@ -150,9 +167,9 @@ const SolutionsSection = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
-            <a 
+            <a
               href="/#contact-demo"
               onClick={handleSeeHowItWorksClick}
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 px-8 bg-white text-navy-primary hover:bg-white/90"
