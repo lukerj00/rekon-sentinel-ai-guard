@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Users, BarChart3, Settings } from "lucide-react";
 import showsecLogo from "@/assets/showsec.png";
@@ -48,7 +49,7 @@ const WhyAiRekonSection = () => {
             className="text-4xl md:text-5xl font-bold text-navy-primary mb-6 justify-center"
           />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            AI Rekon isn't just another AI company. We're security professionals who've built 
+            AI Rekon isn't just another AI company. We're UCL Professors of Crime Science and ex Oxford/Cambridge Machine Learning researchers who've built 
             the world's most sophisticated AI-augmented security intelligence platform.
           </p>
         </div>
