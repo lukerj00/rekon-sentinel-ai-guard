@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Users, BarChart3, Settings } from "lucide-react";
 import showsecLogo from "@/assets/showsec.png";
@@ -22,8 +23,8 @@ const WhyAiRekonSection = () => {
     {
       icon: <Users className="w-12 h-12 text-steel-blue" />,
       title: "World-Class Expertise",
-      description: "Deep counter-terrorism, security operations, and AI expertise. Our team combines real-world security experience with cutting-edge technical capabilities.",
-      highlight: "Counter-terrorism & AI specialists"
+      description: "Our team combines UCL Professors of Crime Science with ex Oxford/Cambridge Machine Learning researchers. This unique blend of real-world security expertise and cutting-edge AI capabilities is unmatched in the industry.",
+      highlight: "UCL Crime Science + Oxbridge ML researchers"
     },
     {
       icon: <BarChart3 className="w-12 h-12 text-accent-blue" />,
@@ -48,7 +49,7 @@ const WhyAiRekonSection = () => {
             className="text-4xl md:text-5xl font-bold text-navy-primary mb-6 justify-center"
           />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            AI Rekon isn't just another AI company. We're security professionals who've built 
+            AI Rekon isn't just another AI company. We're UCL Professors of Crime Science and ex Oxford/Cambridge Machine Learning researchers who've built 
             the world's most sophisticated AI-augmented security intelligence platform.
           </p>
         </div>
