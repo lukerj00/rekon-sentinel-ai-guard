@@ -120,7 +120,7 @@ const ContactSection = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>hello@airekon.com</span>
+                  <span>info@airekon.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-primary" />
