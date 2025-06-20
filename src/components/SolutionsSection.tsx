@@ -16,7 +16,8 @@ const SolutionsSection = () => {
         "Mitigation strategy generation",
         "Real-time threat modeling"
       ],
-      gradient: "from-success-green/20 to-navy-light/20"
+      gradient: "from-success-green/20 to-navy-light/20",
+      contactInquiryType: "SecureEvent Pro" // Added inquiry type
     },
     {
       title: "SecureFlight Pro",
@@ -29,7 +30,8 @@ const SolutionsSection = () => {
         "Operational cost reduction",
         "Enhanced passenger safety"
       ],
-      gradient: "from-accent-blue/20 to-navy-light/20"
+      gradient: "from-accent-blue/20 to-navy-light/20",
+      contactInquiryType: "SecureFlight Pro" // Added inquiry type
     },
     {
       title: "SecureTransit Pro",
@@ -42,7 +44,8 @@ const SolutionsSection = () => {
         "Crowd flow analytics",
         "Custom dashboards for TfL"
       ],
-      gradient: "from-steel-blue/20 to-navy-light/20"
+      gradient: "from-steel-blue/20 to-navy-light/20",
+      contactInquiryType: "SecureTransit Pro" // Added inquiry type
     }
   ];
 
@@ -55,7 +58,7 @@ const SolutionsSection = () => {
     {
       icon: <Zap className="w-6 h-6" />,
       title: "Human-in-the-Loop",
-      description: "Expert oversight ensures accuracy while maintaining speed"
+      description: "Expert oversight ensures accuracy while rapidly speeding up workflows"
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
@@ -64,12 +67,24 @@ const SolutionsSection = () => {
     }
   ];
 
+  // This handles the "See How It Works" button at the bottom of Core AI Features
   const handleSeeHowItWorksClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
-      window.location.hash = 'contact-demo';
+      window.location.hash = 'contact-demo'; // This hash is specifically for "Request a Demo"
+    }
+  };
+
+  // New handler for individual solution card "Learn More" buttons
+  const handleLearnMoreClick = (inquiryType: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault(); // Prevent default link behavior
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      // Encode the inquiry type to be safe for URL hash
+      window.location.hash = `contact-${encodeURIComponent(inquiryType)}`;
     }
   };
 
@@ -118,9 +133,17 @@ const SolutionsSection = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="border-navy-primary text-navy-primary hover:bg-navy-primary hover:text-white transition-all group-hover:scale-105">
+                {/* Changed Button to a tag with buttonVariants */}
+                <a
+                  href={`/#contact-${encodeURIComponent(solution.contactInquiryType)}`} // Dynamic hash link
+                  onClick={(e) => handleLearnMoreClick(solution.contactInquiryType, e)}
+                  className={buttonVariants({
+                    variant: "outline",
+                    className: "border-navy-primary text-navy-primary hover:bg-navy-primary hover:text-white transition-all group-hover:scale-105"
+                  })}
+                >
                   Learn More
-                </Button>
+                </a>
               </CardContent>
             </Card>
           ))}
@@ -135,7 +158,8 @@ const SolutionsSection = () => {
             Beyond our off-the-shelf products, we partner with clients to design and deploy bespoke AI security solutions tailored to unique operational challenges and specific regulatory environments. Let's build something together.
           </p>
           <a
-            href="/#contact"
+            href="/#contact-Custom%20Solutions" // Explicitly set for Custom Solutions
+            onClick={(e) => handleLearnMoreClick("Custom Solutions", e)} // Pass the specific inquiry type
             className={buttonVariants({ variant: "default", className: "bg-navy-primary hover:bg-navy-secondary text-white" })}
           >
             Discuss Your Needs
@@ -170,8 +194,8 @@ const SolutionsSection = () => {
 
           <div className="text-center mt-12">
             <a
-              href="/#contact-demo"
-              onClick={handleSeeHowItWorksClick}
+              href="/#contact-demo" // This remains for "Request a Demo"
+              onClick={handleSeeHowItWorksClick} // Keep the existing handler for this specific button
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 px-8 bg-white text-navy-primary hover:bg-white/90"
             >
               See How It Works
