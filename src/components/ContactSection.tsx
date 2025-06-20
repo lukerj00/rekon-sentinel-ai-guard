@@ -21,11 +21,19 @@ const ContactSection = () => {
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash === '#contact-demo') {
+      const hash = window.location.hash;
+      const contactPrefix = '#contact-';
+      if (hash.startsWith(contactPrefix)) {
+        const inquiryType = decodeURIComponent(hash.replace(contactPrefix, ''));
         setFormData(prev => ({
           ...prev,
-          inquiry_type: "Request a Demo"
+          inquiry_type: inquiryType
         }));
+        // Scroll to contact section
+        const section = document.getElementById('contact');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     };
 

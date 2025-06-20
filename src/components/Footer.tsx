@@ -38,10 +38,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2 text-navy-light">
-              <li><a href="#" className="hover:text-white transition-colors">SecureEvent Pro</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">SecureFlight Pro</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">SecureTransit Pro</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Custom Solutions</a></li>
+              <li><a href="#contact-SecureEvent Pro" className="hover:text-white transition-colors">SecureEvent Pro</a></li>
+              <li><a href="#contact-SecureFlight Pro" className="hover:text-white transition-colors">SecureFlight Pro</a></li>
+              <li><a href="#contact-SecureTransit Pro" className="hover:text-white transition-colors">SecureTransit Pro</a></li>
+              <li><a href="#contact-Custom Solutions" className="hover:text-white transition-colors">Custom Solutions</a></li>
             </ul>
           </div>
 
