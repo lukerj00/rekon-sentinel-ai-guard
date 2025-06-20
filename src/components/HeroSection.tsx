@@ -61,7 +61,7 @@ const HeroSection = () => {
           {/* Badge */}
           <motion.div variants={item} className="inline-flex items-center space-x-2 bg-navy-light/20 text-navy-secondary px-4 py-2 rounded-full text-sm font-medium mb-8">
             <Shield className="w-4 h-4" />
-            <span>UCL Crime Science × Oxbridge ML Research</span>
+            <span>AI-Augmented Security Intelligence</span>
           </motion.div>
           
           {/* Main headline */}

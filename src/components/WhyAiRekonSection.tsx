@@ -23,7 +23,7 @@ const WhyAiRekonSection = () => {
     {
       icon: <Users className="w-12 h-12 text-steel-blue" />,
       title: "World-Class Expertise",
-      description: "Our team combines real-world security experience with cutting-edge technical capabilities, including **UCL Professors of Crime Science** and **ex-Oxford/Cambridge Machine Learning researchers**.",
+      description: "Our team combines real-world security experience with cutting-edge technical capabilities, including UCL Professors of Crime Science and ex-Oxford/Cambridge Machine Learning researchers.",
       highlight: "Counter-terrorism, AI & Crime Science specialists"
     },
     {
@@ -49,7 +49,7 @@ const WhyAiRekonSection = () => {
             className="text-4xl md:text-5xl font-bold text-navy-primary mb-6 justify-center"
           />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            AI Rekon isn't just another AI company. We're UCL Professors of Crime Science and ex Oxford/Cambridge Machine Learning researchers who've built 
+            AI Rekon isn't just another AI company. We're a team of UCL Professors and ex Oxford/Cambridge researchers who're working closely with our clients to build 
             the world's most sophisticated AI-augmented security intelligence platform.
           </p>
         </div>

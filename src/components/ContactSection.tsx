@@ -210,11 +210,14 @@ const ContactSection = () => {
                       <SelectValue placeholder="Select inquiry type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="Request a Demo">Request a Demo</SelectItem>
                       <SelectItem value="General Inquiry">General Inquiry</SelectItem>
-                      <SelectItem value="Partnership Opportunities">Partnership Opportunities</SelectItem>
+                      <SelectItem value="Request a Demo">Request a Demo</SelectItem>
+                      <SelectItem value="SecureEvent Pro">SecureEvent Pro</SelectItem>
+                      <SelectItem value="SecureFlight Pro">SecureFlight Pro</SelectItem>
+                      <SelectItem value="SecureTransit Pro">SecureTransit Pro</SelectItem>
+                      <SelectItem value="Custom Solutions">Custom Solutions</SelectItem>
                       <SelectItem value="Support Question">Support Question</SelectItem>
-                      <SelectItem value="Press/Media">Press/Media</SelectItem>
+                      <SelectItem value="Other">Press/Media</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
