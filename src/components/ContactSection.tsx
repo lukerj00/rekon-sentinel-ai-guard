@@ -14,26 +14,53 @@ const ContactSection = () => {
     email: "",
     company: "",
     message: "",
-    inquiry_type: "General Inquiry"
+    inquiry_type: "General Inquiry" // Default value
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  // Define your inquiry types in a consistent array for easier management
+  const inquiryTypes = [
+    "General Inquiry",
+    "Request a Demo",
+    "SecureEvent Pro",
+    "SecureFlight Pro",
+    "SecureTransit Pro",
+    "Custom Solutions",
+    "Support Question",
+    "Other"
+  ];
 
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
       const contactPrefix = '#contact-';
-      if (hash.startsWith(contactPrefix)) {
-        const inquiryType = decodeURIComponent(hash.replace(contactPrefix, ''));
-        setFormData(prev => ({
-          ...prev,
-          inquiry_type: inquiryType
-        }));
-        // Scroll to contact section
-        const section = document.getElementById('contact');
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
+
+      let newInquiryType = "General Inquiry"; // Default if no matching hash
+
+      if (hash === '#contact-demo') {
+        newInquiryType = 'Request a Demo';
+      } else if (hash.startsWith(contactPrefix)) {
+        const decodedInquiryType = decodeURIComponent(hash.replace(contactPrefix, ''));
+        // Ensure the decoded type is one of our valid inquiry types
+        if (inquiryTypes.includes(decodedInquiryType)) {
+          newInquiryType = decodedInquiryType;
+        } else {
+          // Fallback if an unknown inquiry type is in the hash
+          console.warn(`Unknown inquiry type in hash: ${decodedInquiryType}. Falling back to 'General Inquiry'.`);
+          newInquiryType = "General Inquiry";
         }
+      }
+
+      setFormData(prev => ({
+        ...prev,
+        inquiry_type: newInquiryType
+      }));
+
+      // Scroll to contact section after state update (important for visual consistency)
+      const section = document.getElementById('contact');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
       }
     };
 
@@ -46,7 +73,7 @@ const ContactSection = () => {
     return () => {
       window.removeEventListener('hashchange', handleHashChange, false);
     };
-  }, []);
+  }, []); // Empty dependency array means this runs once on mount
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -57,6 +84,7 @@ const ContactSection = () => {
   };
 
   const handleSelectChange = (value: string) => {
+    // This value directly comes from the Select component and should match an Item's value
     setFormData(prev => ({
       ...prev,
       inquiry_type: value
@@ -93,7 +121,7 @@ const ContactSection = () => {
         email: "",
         company: "",
         message: "",
-        inquiry_type: "General Inquiry"
+        inquiry_type: "General Inquiry" // Reset to default after successful submission
       });
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -115,7 +143,7 @@ const ContactSection = () => {
             Get in Touch
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to transform your security operations? Contact our team to learn more about 
+            Ready to transform your security operations? Contact our team to learn more about
             AI Rekon's solutions and schedule a personalised demo.
           </p>
         </div>
@@ -194,7 +222,7 @@ const ContactSection = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium mb-2">
                     Company
@@ -213,19 +241,21 @@ const ContactSection = () => {
                   <label htmlFor="inquiry_type" className="block text-sm font-medium mb-2">
                     Inquiry Type *
                   </label>
-                  <Select value={formData.inquiry_type} onValueChange={handleSelectChange}>
+                  {/* Key is crucial for re-rendering the Select component when its value might not be updating as expected */}
+                  <Select
+                    value={formData.inquiry_type}
+                    onValueChange={handleSelectChange}
+                    key={formData.inquiry_type} // Add key here
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Select inquiry type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="General Inquiry">General Inquiry</SelectItem>
-                      <SelectItem value="Request a Demo">Request a Demo</SelectItem>
-                      <SelectItem value="SecureEvent Pro">SecureEvent Pro</SelectItem>
-                      <SelectItem value="SecureFlight Pro">SecureFlight Pro</SelectItem>
-                      <SelectItem value="SecureTransit Pro">SecureTransit Pro</SelectItem>
-                      <SelectItem value="Custom Solutions">Custom Solutions</SelectItem>
-                      <SelectItem value="Support Question">Support Question</SelectItem>
-                      <SelectItem value="Other">Press/Media</SelectItem>
+                      {inquiryTypes.map((type) => (
+                        <SelectItem key={type} value={type}>
+                          {type}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
@@ -245,8 +275,8 @@ const ContactSection = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full gradient-navy text-white"
                   disabled={isSubmitting}
                 >
