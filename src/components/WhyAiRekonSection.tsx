@@ -22,8 +22,8 @@ const WhyAiRekonSection = () => {
     {
       icon: <Users className="w-12 h-12 text-steel-blue" />,
       title: "World-Class Expertise",
-      description: "Deep counter-terrorism, security operations, and AI expertise. Our team combines real-world security experience with cutting-edge technical capabilities.",
-      highlight: "Counter-terrorism & AI specialists"
+      description: "Our team combines real-world security experience with cutting-edge technical capabilities, including **UCL Professors of Crime Science** and **ex-Oxford/Cambridge Machine Learning researchers**.",
+      highlight: "Counter-terrorism, AI & Crime Science specialists"
     },
     {
       icon: <BarChart3 className="w-12 h-12 text-accent-blue" />,
