@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, FileCheck, Lock, CheckCircle2 } from "lucide-react";
 import TypewriterText from "./TypewriterText";
@@ -22,7 +21,7 @@ const ComplianceSection = () => {
       title: "Martyn's Law",
       subtitle: "Terrorism (Protection of Premises) Act 2025",
       icon: <FileCheck className="w-8 h-8 text-accent-blue" />,
-      description: "Our SecureEvent Pro solution is specifically designed to help organizations comply with Martyn's Law requirements for terrorism risk assessment and mitigation.",
+      description: "Our SecureEvent Pro solution is specifically designed to help organisations comply with Martyn's Law requirements for terrorism risk assessment and mitigation.",
       features: [
         "Automated compliance checking",
         "Risk assessment documentation",
@@ -37,7 +36,7 @@ const ComplianceSection = () => {
       icon: <Lock className="w-8 h-8 text-steel-blue" />,
       description: "Full compliance with European data protection regulations, ensuring personal data is processed lawfully, transparently, and securely.",
       features: [
-        "Data minimization principles",
+        "Data minimisation principles",
         "Right to erasure support",
         "Consent management",
         "Data breach notification"
@@ -94,33 +93,6 @@ const ComplianceSection = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Trust & Certification Banner */}
-        <div className="bg-gradient-to-r from-navy-primary to-navy-secondary rounded-2xl p-8 md:p-12 text-center">
-          <div className="mb-6">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              <TypewriterText text="Built for Trust & Transparency" className="justify-center" />
-            </h3>
-            <p className="text-navy-light text-lg max-w-2xl mx-auto">
-              Every AI Rekon solution undergoes rigorous security testing and compliance validation to ensure your organization meets the most demanding regulatory requirements.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div className="bg-white/10 rounded-xl p-6">
-              <div className="text-3xl font-bold text-white mb-2">24/7</div>
-              <div className="text-navy-light">Security Monitoring</div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-6">
-              <div className="text-3xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-navy-light">Uptime Guarantee</div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-6">
-              <div className="text-3xl font-bold text-white mb-2">Zero</div>
-              <div className="text-navy-light">Data Breaches</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
