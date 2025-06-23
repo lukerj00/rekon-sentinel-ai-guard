@@ -44,10 +44,9 @@ const TypewriterText = ({ text, className = "", el = "div", justify = "center" }
       {words.map((word, index) => (
         <motion.span
           variants={child}
-          style={{ marginRight: "5px" }}
           key={index}
         >
-          {word}
+          {word}{index !== words.length - 1 ? '\u00A0' : ''}
         </motion.span>
       ))}
     </MotionWrapper>
