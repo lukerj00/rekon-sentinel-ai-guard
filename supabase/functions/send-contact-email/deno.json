@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "mailgun": "https://esm.sh/mailgun.js@3.3.0"
+  }
+}
