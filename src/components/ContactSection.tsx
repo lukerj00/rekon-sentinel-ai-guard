@@ -96,7 +96,19 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
+      // Step 1: Invoke the Edge Function to send the email
+      const { error: functionError } = await supabase.functions.invoke(
+        'send-contact-email',
+        { body: formData }
+      );
+
+      if (functionError) {
+        // This error came directly from the function invocation
+        throw new Error(`Function invocation failed: ${functionError.message}`);
+      }
+
+      // Step 2: If the function succeeds, insert into the database
+      const { error: dbError } = await supabase
         .from('contact_submissions')
         .insert([{
           name: formData.name,
@@ -106,8 +118,9 @@ const ContactSection = () => {
           inquiry_type: formData.inquiry_type
         }]);
 
-      if (error) {
-        throw error;
+      if (dbError) {
+        // This error came from the database insert
+        throw new Error(`Database insert failed: ${dbError.message}`);
       }
 
       toast({
@@ -115,19 +128,20 @@ const ContactSection = () => {
         description: "Thank you for contacting us. We'll get back to you soon.",
       });
 
-      // Reset form
+      // Reset form on complete success
       setFormData({
         name: "",
         email: "",
         company: "",
         message: "",
-        inquiry_type: "General Inquiry" // Reset to default after successful submission
+        inquiry_type: "General Inquiry"
       });
+
     } catch (error) {
       console.error('Error submitting form:', error);
       toast({
         title: "Error sending message",
-        description: "Please try again later or contact us directly.",
+        description: (error as Error).message || "Please try again later or contact us directly.",
         variant: "destructive",
       });
     } finally {
