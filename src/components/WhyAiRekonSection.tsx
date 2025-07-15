@@ -1,8 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Users, BarChart3, Settings } from "lucide-react";
-import showsecLogo from "@/assets/showsec.png";
-import americanAirlinesLogo from "@/assets/american_airlines.png";
+import placeholderLogo from "/placeholder.svg";
 import TypewriterText from "./TypewriterText";
 
 const WhyAiRekonSection = () => {
@@ -13,10 +12,7 @@ const WhyAiRekonSection = () => {
       description: "Exclusive access to 20+ years of sensitive security incident data from industry leaders. Our data flywheel creates an intelligence moat that competitors cannot replicate.",
       highlight: (
         <div className="flex items-center space-x-2">
-          <span>Unique datasets from</span>
-          <img src={showsecLogo} alt="Showsec logo" className="h-8" />
-          <span>&</span>
-          <img src={americanAirlinesLogo} alt="American Airlines logo" className="h-10" />
+          <span>Unique datasets from leading event security and aviation companies</span>
         </div>
       )
     },

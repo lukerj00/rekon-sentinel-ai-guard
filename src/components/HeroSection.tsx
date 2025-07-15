@@ -1,9 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Shield, Activity, Search, Lock, Eye, AlertTriangle, ArrowRight } from "lucide-react";
-import showsecLogo from "@/assets/showsec.png";
-import americanAirlinesLogo from "@/assets/american_airlines.png";
-import tflLogo from "@/assets/tfl.png";
-import morpheusLogo from "@/assets/morpheus.png";
+import { ArrowDown, Shield, Activity, Search, Lock, Eye, AlertTriangle, ArrowRight, Plane, Train, TrendingUp } from "lucide-react";
 import TypewriterText from "./TypewriterText";
 import { motion } from "framer-motion";
 import { buttonVariants } from "@/components/ui/button";
@@ -114,14 +110,34 @@ const HeroSection = () => {
           {/* Trusted by section */}
           <motion.div variants={item} className="mt-16 pt-8 border-t border-border/50">
             <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders</p>
-            <div className="flex justify-center items-center space-x-12 opacity-80">
-              <img src={showsecLogo} alt="Showsec logo" className="h-12 object-contain" />
-              <div className="w-px h-14 bg-border"></div>
-              <img src={americanAirlinesLogo} alt="American Airlines logo" className="h-14 object-contain" />
-              <div className="w-px h-14 bg-border"></div>
-              <img src={tflLogo} alt="Transport for London logo" className="h-12 object-contain" />
-              <div className="w-px h-14 bg-border"></div>
-              <img src={morpheusLogo} alt="Morpheus Risk logo" className="h-12 object-contain" />
+            <div className="flex justify-center items-center space-x-10 opacity-80">
+              <div className="text-center min-w-32">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md mb-3 mx-auto">
+                  <Shield className="w-10 h-10 text-success-green" />
+                </div>
+                <p className="text-sm text-muted-foreground whitespace-nowrap">Leading Event Security</p>
+              </div>
+              <div className="w-px h-24 bg-border"></div>
+              <div className="text-center min-w-32">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md mb-3 mx-auto">
+                  <Plane className="w-10 h-10 text-accent-blue" />
+                </div>
+                <p className="text-sm text-muted-foreground whitespace-nowrap">Leading Global Airline</p>
+              </div>
+              <div className="w-px h-24 bg-border"></div>
+              <div className="text-center min-w-32">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md mb-3 mx-auto">
+                  <Train className="w-10 h-10 text-steel-blue" />
+                </div>
+                <p className="text-sm text-muted-foreground whitespace-nowrap">Leading Public Transport</p>
+              </div>
+              <div className="w-px h-24 bg-border"></div>
+              <div className="text-center min-w-32">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md mb-3 mx-auto">
+                  <TrendingUp className="w-10 h-10 text-navy-primary" />
+                </div>
+                <p className="text-sm text-muted-foreground whitespace-nowrap">Leading Security Consultancy</p>
+              </div>
             </div>
           </motion.div>
         </motion.div>

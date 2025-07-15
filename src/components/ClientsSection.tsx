@@ -1,47 +1,43 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote, Shield, Activity, MapPin } from "lucide-react";
-import showsecLogo from "@/assets/showsec.png";
-import americanAirlinesLogo from "@/assets/american_airlines.png";
-import tflLogo from "@/assets/tfl.png";
-import morpheusLogo from "@/assets/morpheus.png";
+import { Quote, Shield, Plane, Train, TrendingUp } from "lucide-react";
 import TypewriterText from "./TypewriterText";
 
 const ClientsSection = () => {
   const clients = [
     {
-      name: "Showsec",
+      name: "Leading Event Security Firm",
       industry: "Event Security",
-      logo: showsecLogo,
+      icon: <Shield className="w-16 h-16 text-success-green" />,
       investment: "SecureEvent Pro",
       commitment: "Event security management",
       description: "Leading event security company supporting our events security platform",
       gradient: "from-success-green/20 to-navy-light/20"
     },
     {
-      name: "American Airlines",
+      name: "Leading Global Airline",
       industry: "Aviation",
-      logo: americanAirlinesLogo,
+      icon: <Plane className="w-16 h-16 text-accent-blue" />,
       investment: "SecureFlight Pro",
       commitment: "Aviation risk classification",
       description: "Major airline supporting our aviation security intelligence platform",
       gradient: "from-accent-blue/20 to-navy-light/20"
     },
     {
-      name: "Transport for London",
+      name: "Leading Public Transport Company",
       industry: "Transport",
-      logo: tflLogo,
+      icon: <Train className="w-16 h-16 text-steel-blue" />,
       investment: "SecureTransit Pro",
       commitment: "Live Data Integration",
-      description: "Developing a real-time security intelligence platform across London's transport network",
+      description: "Developing a real-time security intelligence platform across a major city's transport network",
       gradient: "from-steel-blue/20 to-navy-light/20"
     },
     {
-      name: "Morpheus Risk",
-      industry: "Risk Management",
-      logo: morpheusLogo,
+      name: "Leading Security Consultancy",
+      industry: "Security Consulting",
+      icon: <TrendingUp className="w-16 h-16 text-navy-primary" />,
       investment: "Strategic Partner",
       commitment: "Technology Integration",
-      description: "Risk management specialists enhancing our compliance capabilities",
+      description: "Security consulting specialists enhancing our compliance capabilities",
       gradient: "from-steel-blue/20 to-navy-light/20"
     }
   ];
@@ -66,7 +62,7 @@ const ClientsSection = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${client.gradient} opacity-50`}></div>
               <CardContent className="relative z-10 p-8 text-center">
                 <div className="inline-flex items-center justify-center w-48 h-32 bg-white rounded-xl shadow-md mb-4 group-hover:scale-110 transition-transform duration-300 p-2">
-                  <img src={client.logo} alt={`${client.name} logo`} className="max-h-full max-w-full object-contain" />
+                  {client.icon}
                 </div>
                 <p className="text-steel-blue font-medium mb-4">{client.industry}</p>
                 <p className="text-muted-foreground mb-6 leading-relaxed">{client.description}</p>

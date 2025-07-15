@@ -35,14 +35,14 @@ const SolutionsSection = () => {
     },
     {
       title: "SecureTransit Pro",
-      subtitle: "Transport Operations Intelligence (TfL)",
+      subtitle: "Public Transport Operations Intelligence",
       icon: <MapPin className="w-8 h-8 text-steel-blue" />,
-      description: "Live data integration for Transport for London enabling real-time security monitoring across the network.",
+      description: "Live data integration for major public transport networks enabling real-time security monitoring across the system.",
       features: [
         "Live data feed integration",
         "Automated incident triage",
         "Crowd flow analytics",
-        "Custom dashboards for TfL"
+        "Custom dashboards for operators"
       ],
       gradient: "from-steel-blue/20 to-navy-light/20",
       contactInquiryType: "SecureTransit Pro" // Added inquiry type
